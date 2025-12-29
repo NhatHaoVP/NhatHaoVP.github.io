@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Java Streams API: Xử lý dữ liệu hiện đại | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>Java Streams API: Xử lý dữ liệu hiện đại</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="giới-thiệu">Giới thiệu</h2>
+<p>Được giới thiệu trong Java 8, <strong>Stream API</strong> mang đến một cách tiếp cận hoàn toàn mới để xử lý Collections. Thay vì dùng các vòng lặp <code>for</code> hay <code>while</code> dài dòng, bạn có thể viết code theo phong cách khai báo (declarative), ngắn gọn và dễ đọc hơn.</p>
+<p>Stream không lưu trữ dữ liệu, nó chỉ chuyển dữ liệu từ nguồn (source) qua một chuỗi các thao tác xử lý (pipeline).</p>
+<hr>
+<h2 id="cấu-trúc-của-stream-pipeline">Cấu trúc của Stream Pipeline</h2>
+<p>Một Stream pipeline gồm 3 phần:</p>
+<ol>
+<li><strong>Source:</strong> Nguồn dữ liệu (Collection, Array, I/O channel&hellip;).</li>
+<li><strong>Intermediate Operations:</strong> Các thao tác trung gian (filter, map, sorted&hellip;). Trả về một Stream mới. Lazy execution (chỉ chạy khi có terminal operation).</li>
+<li><strong>Terminal Operation:</strong> Thao tác kết thúc (collect, forEach, reduce&hellip;). Trả về kết quả hoặc void. Kích hoạt toàn bộ pipeline.</li>
+</ol>
+<hr>
+<h2 id="các-thao-tác-biến-đổi-phổ-biến">Các thao tác biến đổi phổ biến</h2>
+<h3 id="1-filter-lọc">1. Filter (Lọc)</h3>
+<p>Lọc các phần tử thỏa mãn điều kiện.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3, 4, 5, 6);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lấy số chẵn</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> evens <span style="color:#f92672">=</span> numbers.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                             .<span style="color:#a6e22e">filter</span>(n <span style="color:#f92672">-&gt;</span> n <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0)
+</span></span><span style="display:flex;"><span>                             .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toList</span>()); 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Kết quả: [2, 4, 6]</span>
+</span></span></code></pre></div><h3 id="2-map-ánh-xạ">2. Map (Ánh xạ)</h3>
+<p>Biến đổi mỗi phần tử thành một giá trị khác.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> names <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Chuyển thành chữ hoa</span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> upper <span style="color:#f92672">=</span> names.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">map</span>(String::toUpperCase)
+</span></span><span style="display:flex;"><span>                          .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toList</span>());
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Kết quả: [&#34;A&#34;, &#34;B&#34;, &#34;C&#34;]</span>
+</span></span></code></pre></div><h3 id="3-sorted-sắp-xếp">3. Sorted (Sắp xếp)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>names.<span style="color:#a6e22e">stream</span>().<span style="color:#a6e22e">sorted</span>().<span style="color:#a6e22e">forEach</span>(System.<span style="color:#a6e22e">out</span>::println);
+</span></span></code></pre></div><h3 id="4-reduce-thu-gọn">4. Reduce (Thu gọn)</h3>
+<p>Gộp các phần tử lại thành 1 giá trị duy nhất.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> numbers.<span style="color:#a6e22e">stream</span>().<span style="color:#a6e22e">reduce</span>(0, (a, b) <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">+</span> b);
+</span></span></code></pre></div><hr>
+<h2 id="parallel-streams-luồng-song-song">Parallel Streams (Luồng song song)</h2>
+<p>Java Streams hỗ trợ xử lý song song cực kỳ đơn giản với <code>parallelStream()</code>. Nó tận dụng kiến trúc đa lõi của CPU để tăng tốc độ xử lý dữ liệu lớn.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>list.<span style="color:#a6e22e">parallelStream</span>().<span style="color:#a6e22e">filter</span>(...).<span style="color:#a6e22e">collect</span>(...);
+</span></span></code></pre></div><p><strong>Lưu ý:</strong> Chỉ dùng Parallel Streams khi dữ liệu thực sự lớn và tác vụ xử lý độc lập với nhau. Nếu dùng sai có thể gây chậm hơn hoặc lỗi thread-safety.</p>
+<h2 id="các-sai-lầm-thường-gặp">Các sai lầm thường gặp</h2>
+<ol>
+<li><strong>Tái sử dụng Stream:</strong> Một Stream sau khi đã gọi terminal operation thì sẽ bị đóng. Nếu gọi lại sẽ ném Exception.</li>
+<li><strong>Thay đổi dữ liệu gốc:</strong> Stream API được thiết kế để không thay đổi (mutate) dữ liệu nguồn. Hãy trả về list mới thay vì sửa list cũ.</li>
+<li><strong>Quên Terminal Operation:</strong> Nếu không có terminal op, các lệnh filter/map sẽ KHÔNG BAO GIỜ CHẠY.</li>
+</ol>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Stream API giúp code Java trở nên thanh thoát và mạnh mẽ hơn rất nhiều. Kết hợp với Lambda Expressions, đây là kỹ năng bắt buộc phải có của một Java Developer hiện đại.</p>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

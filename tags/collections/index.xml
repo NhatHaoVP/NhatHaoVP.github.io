@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on Võ Phạm Nhật Hào</title>
+    <link>http://example.org/tags/collections/</link>
+    <description>Recent content in Collections on Võ Phạm Nhật Hào</description>
+    <generator>Hugo</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 29 Dec 2025 10:00:00 +0700</lastBuildDate>
+    <atom:link href="http://example.org/tags/collections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Collections Framework: Hướng dẫn chi tiết</title>
+      <link>http://example.org/posts/java-collections/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0700</pubDate>
+      <guid>http://example.org/posts/java-collections/</guid>
+      <description>&lt;h2 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Java Collections Framework (JCF) cung cấp một kiến trúc thống nhất để lưu trữ và thao tác với nhóm các đối tượng. Nó bao gồm các Interfaces (Giao diện), Implementations (Lớp cài đặt) và Algorithms (Thuật toán). Sử dụng Collection giúp bạn không phải tự viết lại các cấu trúc dữ liệu cơ bản như danh sách lien kết hay bảng băm.&lt;/p&gt;&#xA;&lt;h2 id=&#34;các-interface-chính&#34;&gt;Các Interface chính&lt;/h2&gt;&#xA;&lt;p&gt;Hệ thống Collection trong Java xoay quanh các interface cốt lõi sau:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

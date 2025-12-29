@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Làm chủ JavaScript DOM Manipulation | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>Làm chủ JavaScript DOM Manipulation</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="dom-là-gì">DOM là gì?</h2>
+<p>DOM (Document Object Model) là cách trình duyệt biểu diễn trang HTML của bạn dưới dạng một cây (tree) các đối tượng. JavaScript thông qua DOM để thay đổi nội dung, cấu trúc và kiểu dáng của trang web một cách động.</p>
+<hr>
+<h2 id="1-chọn-phần-tử-selecting-elements">1. Chọn phần tử (Selecting Elements)</h2>
+<p>Quên <code>getElementById</code> hay <code>getElementsByClassName</code> đi nếu bạn muốn code hiện đại. Hãy dùng bộ đôi quyền lực:</p>
+<ul>
+<li><code>document.querySelector('selector')</code>: Chọn phần tử đầu tiên khớp với CSS selector.</li>
+<li><code>document.querySelectorAll('selector')</code>: Chọn TẤT CẢ phần tử khớp (trả về NodeList).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#main-title&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">buttons</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.btn-click&#39;</span>);
+</span></span></code></pre></div><hr>
+<h2 id="2-thay-đổi-nội-dung-và-style">2. Thay đổi nội dung và Style</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.box&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Đổi nội dung
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">textContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nội dung mới&#34;</span>; <span style="color:#75715e">// An toàn hơn innerHTML
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// box.innerHTML = &#34;&lt;b&gt;Đậm&lt;/b&gt;&#34;; // Cẩn thận XSS attack
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Đổi Style trực tiếp
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">backgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">fontSize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;20px&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Thêm/Xóa Class (Khuyên dùng thay vì sửa style trực tiếp)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;hidden&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#39;dark-mode&#39;</span>);
+</span></span></code></pre></div><hr>
+<h2 id="3-lắng-nghe-sự-kiện-event-listeners">3. Lắng nghe sự kiện (Event Listeners)</h2>
+<p>Đừng bao giờ dùng <code>onclick=&quot;...&quot;</code> trong HTML. Hãy tách biệt logic ra khỏi giao diện bằng <code>addEventListener</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">btn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#submit-btn&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đã click nút!&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>); <span style="color:#75715e">// Phần tử bị click
+</span></span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><hr>
+<h2 id="4-sự-kiện-nổi-bọt-event-bubbling--ủy-quyền-delegation">4. Sự kiện nổi bọt (Event Bubbling) &amp; Ủy quyền (Delegation)</h2>
+<p>Khi bạn click một thẻ con, sự kiện sẽ &ldquo;nổi&rdquo; lên các thẻ cha. Ta có thể tận dụng điều này để xử lý sự kiện cho nhiều phần tử con bằng cách chỉ gán 1 listener cho cha (Event Delegation).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Thay vì gán click cho 100 thẻ &lt;li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;ul&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">tagName</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;LI&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Bạn đã chọn mục:&#34;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">textContent</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Cách này giúp tiết kiệm bộ nhớ và code chạy nhanh hơn.</p>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Thao tác DOM thuần thục giúp bạn hiểu sâu về cách trình duyệt hoạt động, kể cả khi sau này bạn chuyển sang dùng React hay Vue, kiến thức nền tảng này vẫn cực kỳ quý giá.</p>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

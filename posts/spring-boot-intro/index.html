@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nhập môn Spring Boot: Tại sao nên dùng? | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>Nhập môn Spring Boot: Tại sao nên dùng?</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="spring-vs-spring-boot">Spring vs Spring Boot</h2>
+<p>Spring Framework là một framework khổng lồ và mạnh mẽ nhất thế giới Java. Tuy nhiên, việc cấu hình Spring (XML hoặc Java Config) rất phức tạp và tốn thời gian (&ldquo;Configuration Hell&rdquo;).</p>
+<p><strong>Spring Boot</strong> ra đời để giải quyết vấn đề đó. Nó được xây dựng <em>trên nền tảng</em> Spring nhưng đi kèm triết lý <strong>&ldquo;Convention over Configuration&rdquo;</strong> (Quy ước hơn cấu hình).</p>
+<ul>
+<li><strong>Auto-configuration:</strong> Tự động cấu hình các thư viện dựa trên file JAR có trong project.</li>
+<li><strong>Standalone:</strong> Tích hợp sẵn server (như Tomcat, Jetty) nên có thể chạy ứng dụng chỉ bằng lệnh <code>java -jar</code>.</li>
+<li><strong>Opinionated:</strong> Đưa ra các cấu hình mặc định hợp lý để bạn bắt đầu code business logic ngay lập tức.</li>
+</ul>
+<hr>
+<h2 id="các-khái-niệm-cốt-lõi">Các khái niệm cốt lõi</h2>
+<h3 id="1-inversion-of-control-ioc-và-dependency-injection-di">1. Inversion of Control (IoC) và Dependency Injection (DI)</h3>
+<p>Đây là trái tim của Spring. Thay vì bạn tự tạo đối tượng (<code>new Object()</code>), Spring Container sẽ tạo và quản lý chúng (gọi là <strong>Beans</strong>). Khi cần dùng, Spring sẽ tự &ldquo;tiêm&rdquo; (inject) vào cho bạn.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span> <span style="color:#75715e">// Đánh dấu đây là một Bean</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Autowired</span> <span style="color:#75715e">// Spring tự động tìm UserService và đưa vào đây</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> UserService userService;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="2-các-annotation-phổ-biến">2. Các Annotation phổ biến</h3>
+<ul>
+<li><code>@Component</code>, <code>@Service</code>, <code>@Repository</code>: Đánh dấu class là Bean để Spring quản lý.</li>
+<li><code>@Autowired</code>: Tiêm phụ thuộc (DI).</li>
+<li><code>@RestController</code>: Đánh dấu class xử lý API request và trả về JSON.</li>
+<li><code>@RequestMapping</code>, <code>@GetMapping</code>, <code>@PostMapping</code>: Định tuyến URL đến hàm xử lý.</li>
+</ul>
+<h3 id="3-application-properties">3. Application Properties</h3>
+<p>Mọi cấu hình (database, server port, logging&hellip;) đều nằm gọn trong file <code>application.properties</code> hoặc <code>application.yml</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">server.port</span><span style="color:#f92672">=</span><span style="color:#e6db74">8080</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:mysql://localhost:3306/mydb</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">root</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">1234</span>
+</span></span></code></pre></div><hr>
+<h2 id="ví-dụ-hello-world-api">Ví dụ: Hello World API</h2>
+<p>Chỉ với vài dòng code, bạn đã có một REST API hoàn chỉnh:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>(<span style="color:#e6db74">&#34;/hello&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">sayHello</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Xin chào! Spring Boot rất tuyệt!&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Truy cập <code>http://localhost:8080/hello</code> sẽ nhận được chuỗi text trên.</p>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Spring Boot đã thay đổi cuộc chơi của Java Backend Developer, giúp việc phát triển Microservices trở nên dễ dàng và nhanh chóng hơn bao giờ hết. Nếu bạn làm Java Web, Spring Boot là kỹ năng bắt buộc.</p>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

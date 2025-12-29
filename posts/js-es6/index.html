@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript ES6&#43;: Những tính năng hiện đại bạn phải biết | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>JavaScript ES6&#43;: Những tính năng hiện đại bạn phải biết</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="es6-là-gì">ES6 là gì?</h2>
+<p>ES6 (ECMAScript 2015) là bước nhảy vọt lớn nhất lịch sử JavaScript. Kể từ phiên bản này, JS trở nên mạnh mẽ, rõ ràng và phù hợp để xây dựng các ứng dụng lớn. Dưới đây là các tính năng &ldquo;must-know&rdquo;.</p>
+<hr>
+<h2 id="1-let-và-const">1. <code>let</code> và <code>const</code></h2>
+<p>Tạm biệt <code>var</code>.</p>
+<ul>
+<li><code>let</code>: Khai báo biến có thể thay đổi giá trị. Phạm vi Block scope <code>{}</code>.</li>
+<li><code>const</code>: Khai báo hằng số. Không thể gán lại giá trị. Phạm vi Block scope.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// console.log(a); // Lỗi: a is not defined
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>); <span style="color:#75715e">// 20 (Do var có function/global scope)
+</span></span></span></code></pre></div><h2 id="2-arrow-function">2. Arrow Function</h2>
+<p>Cú pháp hàm mũi tên ngắn gọn hơn và xử lý từ khóa <code>this</code> khác biệt (lexical <code>this</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Cũ
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Mới
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
+</span></span></code></pre></div><h2 id="3-template-literals">3. Template Literals</h2>
+<p>Dùng dấu backtick (<code>`</code>) để tạo chuỗi đa dòng và chèn biến siêu dễ.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hào&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">msg</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`Xin chào </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Chào mừng bạn đến với Blog!`</span>;
+</span></span></code></pre></div><h2 id="4-destructuring-phân-rã">4. Destructuring (Phân rã)</h2>
+<p>Trích xuất dữ liệu từ Array hoặc Object cực nhanh.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Object
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hào&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22</span> };
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">user</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Array
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Red&#34;</span>, <span style="color:#e6db74">&#34;Green&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">first</span>, <span style="color:#a6e22e">second</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>;
+</span></span></code></pre></div><h2 id="5-default-parameters">5. Default Parameters</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">welcome</span>(<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Khách&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Hello </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">welcome</span>(); <span style="color:#75715e">// Hello Khách
+</span></span></span></code></pre></div><h2 id="6-spread-operator-">6. Spread Operator (&hellip;)</h2>
+<p>Dùng để sao chép hoặc gộp mảng/object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr2</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">arr1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]; <span style="color:#75715e">// [1, 2, 3, 4]
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userUpdate</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">user</span>, <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;new@email.com&#34;</span> };
+</span></span></code></pre></div><h2 id="7-modules-importexport">7. Modules (Import/Export)</h2>
+<p>Chia nhỏ code thành nhiều file để dễ quản lý.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// lib.js
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// main.js
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">pi</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./lib.js&#39;</span>;
+</span></span></code></pre></div><h2 id="kết-luận">Kết luận</h2>
+<p>Nếu bạn vẫn đang viết JS kiểu cũ (ES5), hãy cập nhật ngay lên ES6+. Đây là tiêu chuẩn của mọi framework hiện đại như React, Vue và Angular.</p>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

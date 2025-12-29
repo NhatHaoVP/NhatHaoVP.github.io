@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Java vs JavaScript: Sự khác biệt là gì? | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>Java vs JavaScript: Sự khác biệt là gì?</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="java-giống-javascript-như-car-giống-carpet">&ldquo;Java giống JavaScript như Car giống Carpet&rdquo;</h2>
+<p>Câu nói vui này thể hiện rõ sự thật: Dù có tên gần giống nhau, Java và JavaScript là hai ngôn ngữ hoàn toàn khác biệt về mục đích, thiết kế và cách hoạt động.</p>
+<hr>
+<h2 id="1-hệ-thống-kiểu-dữ-liệu-type-system">1. Hệ thống kiểu dữ liệu (Type System)</h2>
+<ul>
+<li>
+<p><strong>Java (Statically Typed):</strong> Bạn phải khai báo kiểu dữ liệu cho biến. Trình biên dịch sẽ kiểm tra lỗi kiểu dữ liệu trước khi chạy chương trình (Compile-time). Điều này giúp code an toàn và dễ bảo trì trong các dự án lớn.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> 10;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// count = &#34;ten&#34;; // Lỗi biên dịch ngay lập tức</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>JavaScript (Dynamically Typed):</strong> Bạn không cần khai báo kiểu. Biến có thể thay đổi kiểu dữ liệu liên tục trong lúc chạy (Runtime). Linh hoạt nhưng dễ gây lỗi khó tìm.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ten&#34;</span>; <span style="color:#75715e">// Hoàn toàn hợp lệ
+</span></span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="2-môi-trường-chạy-runtime-environment">2. Môi trường chạy (Runtime Environment)</h2>
+<ul>
+<li><strong>Java:</strong> Chạy trên <strong>Java Virtual Machine (JVM)</strong>. Code Java được biên dịch thành Bytecode, có thể chạy trên bất kỳ máy nào có cài JVM (&ldquo;Write Once, Run Anywhere&rdquo;). Thường dùng cho Backend, Android, hệ thống nhúng.</li>
+<li><strong>JavaScript:</strong> Chạy chủ yếu trên <strong>Trình duyệt (Browser)</strong> hoặc <strong>Node.js</strong>. JS được thông dịch hoặc biên dịch JIT (Just-In-Time) bởi các engine như V8 (Chrome), SpiderMonkey (Firefox). Thường dùng cho Frontend, và gần đây là Backend (Node.js).</li>
+</ul>
+<hr>
+<h2 id="3-mô-hình-xử-lý-đồng-thời-concurrency">3. Mô hình xử lý đồng thời (Concurrency)</h2>
+<ul>
+<li><strong>Java:</strong> Sử dụng <strong>Multi-threading</strong>. Java có thể tạo ra nhiều luồng (thread) chạy song song thực sự để tận dụng CPU đa nhân. Tuy mạnh nhưng việc quản lý thread và đồng bộ hóa (synchronization) rất phức tạp.</li>
+<li><strong>JavaScript:</strong> Sử dụng <strong>Event Loop</strong> đơn luồng (Single-threaded). JS xử lý bất đồng bộ thông qua Callbacks, Promises, Async/Await. Mô hình này rất hiệu quả cho các tác vụ I/O heavy (mạng, đọc file) nhưng kém hiệu quả nếu tính toán nặng (CPU blocking).</li>
+</ul>
+<hr>
+<h2 id="4-cú-pháp-và-oop">4. Cú pháp và OOP</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Đặc điểm</th>
+          <th style="text-align: left">Java</th>
+          <th style="text-align: left">JavaScript</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>OOP</strong></td>
+          <td style="text-align: left">Class-based thuần túy. Kế thừa từ Class.</td>
+          <td style="text-align: left">Prototype-based. Kế thừa từ Prototype (dù có từ khóa <code>class</code>).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Functional</strong></td>
+          <td style="text-align: left">Hỗ trợ từ Java 8 (Lambda, Streams).</td>
+          <td style="text-align: left">Hỗ trợ mạnh mẽ (First-class functions).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>File</strong></td>
+          <td style="text-align: left">Đuôi <code>.java</code> biên dịch ra <code>.class</code>.</td>
+          <td style="text-align: left">Đuôi <code>.js</code> chạy trực tiếp (script).</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Không có ngôn ngữ nào &ldquo;tốt hơn&rdquo; ngôn ngữ nào.</p>
+<ul>
+<li>Chọn <strong>Java</strong> nếu bạn xây dựng hệ thống ngân hàng, doanh nghiệp lớn, ứng dụng Android cần độ ổn định và bảo mật cao.</li>
+<li>Chọn <strong>JavaScript</strong> nếu bạn làm Web (Frontend), ứng dụng realtime, hoặc muốn xây dựng nhanh một sản phẩm (MVP) với cùng một ngôn ngữ cho cả Front và Back.</li>
+</ul>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

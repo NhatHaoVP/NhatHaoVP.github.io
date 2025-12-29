@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ES6 on Võ Phạm Nhật Hào</title>
+    <link>http://example.org/tags/es6/</link>
+    <description>Recent content in ES6 on Võ Phạm Nhật Hào</description>
+    <generator>Hugo</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 29 Dec 2025 13:00:00 +0700</lastBuildDate>
+    <atom:link href="http://example.org/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript ES6&#43;: Những tính năng hiện đại bạn phải biết</title>
+      <link>http://example.org/posts/js-es6/</link>
+      <pubDate>Mon, 29 Dec 2025 13:00:00 +0700</pubDate>
+      <guid>http://example.org/posts/js-es6/</guid>
+      <description>&lt;h2 id=&#34;es6-là-gì&#34;&gt;ES6 là gì?&lt;/h2&gt;&#xA;&lt;p&gt;ES6 (ECMAScript 2015) là bước nhảy vọt lớn nhất lịch sử JavaScript. Kể từ phiên bản này, JS trở nên mạnh mẽ, rõ ràng và phù hợp để xây dựng các ứng dụng lớn. Dưới đây là các tính năng &amp;ldquo;must-know&amp;rdquo;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-let-và-const&#34;&gt;1. &lt;code&gt;let&lt;/code&gt; và &lt;code&gt;const&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Tạm biệt &lt;code&gt;var&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;let&lt;/code&gt;: Khai báo biến có thể thay đổi giá trị. Phạm vi Block scope &lt;code&gt;{}&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;const&lt;/code&gt;: Khai báo hằng số. Không thể gán lại giá trị. Phạm vi Block scope.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// console.log(a); // Lỗi: a is not defined&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// 20 (Do var có function/global scope)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-arrow-function&#34;&gt;2. Arrow Function&lt;/h2&gt;&#xA;&lt;p&gt;Cú pháp hàm mũi tên ngắn gọn hơn và xử lý từ khóa &lt;code&gt;this&lt;/code&gt; khác biệt (lexical &lt;code&gt;this&lt;/code&gt;).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

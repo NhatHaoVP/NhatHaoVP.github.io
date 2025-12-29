@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Async on Võ Phạm Nhật Hào</title>
+    <link>http://example.org/tags/async/</link>
+    <description>Recent content in Async on Võ Phạm Nhật Hào</description>
+    <generator>Hugo</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 29 Dec 2025 16:00:00 +0700</lastBuildDate>
+    <atom:link href="http://example.org/tags/async/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript Async/Await: Xử lý bất đồng bộ như một chuyên gia</title>
+      <link>http://example.org/posts/js-async-await/</link>
+      <pubDate>Mon, 29 Dec 2025 16:00:00 +0700</pubDate>
+      <guid>http://example.org/posts/js-async-await/</guid>
+      <description>&lt;h2 id=&#34;bất-đồng-bộ-asynchronous-là-gì&#34;&gt;Bất đồng bộ (Asynchronous) là gì?&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript là ngôn ngữ đơn luồng (single-threaded). Nếu một tác vụ nặng (như gọi API, đọc file) chặn luồng chính, toàn bộ giao diện web sẽ bị &amp;ldquo;đơ&amp;rdquo;. Để giải quyết, JS sử dụng cơ chế xử lý bất đồng bộ.&lt;/p&gt;&#xA;&lt;p&gt;Lịch sử phát triển:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Callbacks:&lt;/strong&gt; Dễ gây ra &amp;ldquo;Callback Hell&amp;rdquo; (các hàm lồng nhau quá sâu).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Promises (ES6):&lt;/strong&gt; Sạch sẽ hơn, dùng &lt;code&gt;.then()&lt;/code&gt; và &lt;code&gt;.catch()&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Async/Await (ES8):&lt;/strong&gt; Cú pháp ngọt ngào (syntactic sugar) cho Promises, giúp code bất đồng bộ trông giống hệt đồng bộ.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;từ-promise-đến-asyncawait&#34;&gt;Từ Promise đến Async/Await&lt;/h2&gt;&#xA;&lt;p&gt;Giả sử ta cần lấy dữ liệu user từ server:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

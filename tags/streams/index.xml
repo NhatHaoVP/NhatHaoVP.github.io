@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Streams on Võ Phạm Nhật Hào</title>
+    <link>http://example.org/tags/streams/</link>
+    <description>Recent content in Streams on Võ Phạm Nhật Hào</description>
+    <generator>Hugo</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 29 Dec 2025 12:00:00 +0700</lastBuildDate>
+    <atom:link href="http://example.org/tags/streams/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Streams API: Xử lý dữ liệu hiện đại</title>
+      <link>http://example.org/posts/java-streams/</link>
+      <pubDate>Mon, 29 Dec 2025 12:00:00 +0700</pubDate>
+      <guid>http://example.org/posts/java-streams/</guid>
+      <description>&lt;h2 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Được giới thiệu trong Java 8, &lt;strong&gt;Stream API&lt;/strong&gt; mang đến một cách tiếp cận hoàn toàn mới để xử lý Collections. Thay vì dùng các vòng lặp &lt;code&gt;for&lt;/code&gt; hay &lt;code&gt;while&lt;/code&gt; dài dòng, bạn có thể viết code theo phong cách khai báo (declarative), ngắn gọn và dễ đọc hơn.&lt;/p&gt;&#xA;&lt;p&gt;Stream không lưu trữ dữ liệu, nó chỉ chuyển dữ liệu từ nguồn (source) qua một chuỗi các thao tác xử lý (pipeline).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

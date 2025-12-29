@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OOP on Võ Phạm Nhật Hào</title>
+    <link>http://example.org/tags/oop/</link>
+    <description>Recent content in OOP on Võ Phạm Nhật Hào</description>
+    <generator>Hugo</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 29 Dec 2025 11:00:00 +0700</lastBuildDate>
+    <atom:link href="http://example.org/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lập Trình Hướng Đối Tượng (OOP) trong Java</title>
+      <link>http://example.org/posts/java-oop/</link>
+      <pubDate>Mon, 29 Dec 2025 11:00:00 +0700</pubDate>
+      <guid>http://example.org/posts/java-oop/</guid>
+      <description>&lt;h2 id=&#34;giới-thiệu-về-oop&#34;&gt;Giới thiệu về OOP&lt;/h2&gt;&#xA;&lt;p&gt;Lập trình hướng đối tượng (Object-Oriented Programming - OOP) là một mô hình lập trình dựa trên khái niệm &amp;ldquo;đối tượng&amp;rdquo; chứa dữ liệu (thuộc tính) và mã lệnh (phương thức). Java là ngôn ngữ thuần OOP, do đó hiểu rõ 4 nguyên lý cơ bản của OOP là bắt buộc.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;4-nguyên-lý-cơ-bản-the-4-pillars-of-oop&#34;&gt;4 Nguyên lý cơ bản (The 4 Pillars of OOP)&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-tính-đóng-gói-encapsulation&#34;&gt;1. Tính Đóng Gói (Encapsulation)&lt;/h3&gt;&#xA;&lt;p&gt;Đóng gói là việc che giấu dữ liệu bên trong nội bộ của đối tượng và chỉ cho phép truy cập thông qua các phương thức công khai (getter/setter). Điều này giúp bảo vệ dữ liệu khỏi bị thay đổi tùy tiện.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

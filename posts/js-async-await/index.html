@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Async/Await: Xử lý bất đồng bộ như một chuyên gia | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>JavaScript Async/Await: Xử lý bất đồng bộ như một chuyên gia</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="bất-đồng-bộ-asynchronous-là-gì">Bất đồng bộ (Asynchronous) là gì?</h2>
+<p>JavaScript là ngôn ngữ đơn luồng (single-threaded). Nếu một tác vụ nặng (như gọi API, đọc file) chặn luồng chính, toàn bộ giao diện web sẽ bị &ldquo;đơ&rdquo;. Để giải quyết, JS sử dụng cơ chế xử lý bất đồng bộ.</p>
+<p>Lịch sử phát triển:</p>
+<ol>
+<li><strong>Callbacks:</strong> Dễ gây ra &ldquo;Callback Hell&rdquo; (các hàm lồng nhau quá sâu).</li>
+<li><strong>Promises (ES6):</strong> Sạch sẽ hơn, dùng <code>.then()</code> và <code>.catch()</code>.</li>
+<li><strong>Async/Await (ES8):</strong> Cú pháp ngọt ngào (syntactic sugar) cho Promises, giúp code bất đồng bộ trông giống hệt đồng bộ.</li>
+</ol>
+<hr>
+<h2 id="từ-promise-đến-asyncawait">Từ Promise đến Async/Await</h2>
+<p>Giả sử ta cần lấy dữ liệu user từ server:</p>
+<h3 id="cách-dùng-promise">Cách dùng Promise</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getUser</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://api.example.com/user&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>())
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Lỗi:&#34;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="cách-dùng-asyncawait">Cách dùng Async/Await</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getUser</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://api.example.com/user&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Lỗi:&#34;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Nhìn gọn gàng và dễ hiểu luồng chạy hơn hẳn đúng không?</p>
+<hr>
+<h2 id="các-khái-niệm-quan-trọng">Các khái niệm quan trọng</h2>
+<ol>
+<li><strong><code>async</code> function:</strong> Luôn trả về một Promise. Nếu hàm return một giá trị, Promise đó sẽ được resolved với giá trị đó.</li>
+<li><strong><code>await</code> keyword:</strong> Chỉ dùng được trong hàm <code>async</code>. Nó làm JS &ldquo;tạm dừng&rdquo; việc thực thi hàm đó cho đến khi Promise trả về kết quả.</li>
+<li><strong><code>try...catch</code>:</strong> Cách chuẩn để bắt lỗi trong Async/Await.</li>
+</ol>
+<h2 id="xử-lý-song-song-với-promiseall">Xử lý song song với Promise.all</h2>
+<p>Nếu bạn cần gọi nhiều API cùng lúc và không cái nào phụ thuộc cái nào, đừng dùng <code>await</code> tuần tự vì sẽ rất chậm. Hãy dùng <code>Promise.all</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Chậm (Tuần tự) - Mất 5s nếu mỗi cái mất 1s (giả sử có 5 cái)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// await A(); await B(); await C(); 
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Nhanh (Song song) - Mất 1s (theo cái lâu nhất)
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getAllData</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">user</span>, <span style="color:#a6e22e">posts</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> Promise.<span style="color:#a6e22e">all</span>([
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fetchUser</span>(),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fetchPosts</span>()
+</span></span><span style="display:flex;"><span>    ]);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Xử lý cả 2
+</span></span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Bắt lỗi nếu 1 trong các promise fail
+</span></span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="kết-luận">Kết luận</h2>
+<p>Async/Await là tiêu chuẩn vàng của JS hiện đại. Hãy sử dụng nó để code dễ đọc, dễ debug và chuyên nghiệp hơn.</p>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

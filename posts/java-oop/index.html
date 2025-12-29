@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lập Trình Hướng Đối Tượng (OOP) trong Java | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>Lập Trình Hướng Đối Tượng (OOP) trong Java</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="giới-thiệu-về-oop">Giới thiệu về OOP</h2>
+<p>Lập trình hướng đối tượng (Object-Oriented Programming - OOP) là một mô hình lập trình dựa trên khái niệm &ldquo;đối tượng&rdquo; chứa dữ liệu (thuộc tính) và mã lệnh (phương thức). Java là ngôn ngữ thuần OOP, do đó hiểu rõ 4 nguyên lý cơ bản của OOP là bắt buộc.</p>
+<hr>
+<h2 id="4-nguyên-lý-cơ-bản-the-4-pillars-of-oop">4 Nguyên lý cơ bản (The 4 Pillars of OOP)</h2>
+<h3 id="1-tính-đóng-gói-encapsulation">1. Tính Đóng Gói (Encapsulation)</h3>
+<p>Đóng gói là việc che giấu dữ liệu bên trong nội bộ của đối tượng và chỉ cho phép truy cập thông qua các phương thức công khai (getter/setter). Điều này giúp bảo vệ dữ liệu khỏi bị thay đổi tùy tiện.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BankAccount</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> balance; <span style="color:#75715e">// Dữ liệu private</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deposit</span>(<span style="color:#66d9ef">double</span> amount) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (amount <span style="color:#f92672">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>            balance <span style="color:#f92672">+=</span> amount; <span style="color:#75715e">// Chỉ thay đổi qua logic kiểm soát</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getBalance</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> balance;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="2-tính-kế-thừa-inheritance">2. Tính Kế Thừa (Inheritance)</h3>
+<p>Cho phép một class con (subclass) kế thừa các thuộc tính và phương thức từ class cha (superclass). Từ khóa <code>extends</code>. Giúp tái sử dụng mã nguồn (code reusability).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">eat</span>() { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Eating...&#34;</span>); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span> <span style="color:#66d9ef">extends</span> Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bark</span>() { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Woof!&#34;</span>); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Dog có cả eat() và bark()</span>
+</span></span></code></pre></div><h3 id="3-tính-đa-hình-polymorphism">3. Tính Đa Hình (Polymorphism)</h3>
+<p>Cho phép một hành động có thể được thực hiện theo nhiều cách khác nhau. Đa hình thường thể hiện qua:</p>
+<ul>
+<li><strong>Overloading (Nạp chồng):</strong> Cùng tên hàm nhưng khác tham số (Compile-time polymorphism).</li>
+<li><strong>Overriding (Ghi đè):</strong> Class con viết lại hàm của class cha (Runtime polymorphism).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Overriding example</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> <span style="color:#66d9ef">extends</span> Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">eat</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Cat eats fish&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="4-tính-trừu-tượng-abstraction">4. Tính Trừu Tượng (Abstraction)</h3>
+<p>Ẩn đi các chi tiết cài đặt phức tạp và chỉ hiển thị những tính năng cần thiết cho người dùng. Thực hiện thông qua <code>Abstract Class</code> và <code>Interface</code>.</p>
+<ul>
+<li><strong>Abstract Class:</strong> Có thể chứa cả phương thức trừu tượng (không có thân hàm) và phương thức cụ thể. Dùng khi các class có quan hệ chặt chẽ &ldquo;is-a&rdquo;.</li>
+<li><strong>Interface:</strong> Chỉ chứa hằng số và phương thức trừu tượng (trước Java 8). Dùng để định nghĩa hành vi &ldquo;can-do&rdquo;.</li>
+</ul>
+<hr>
+<h2 id="từ-khóa-this-và-super">Từ khóa <code>this</code> và <code>super</code></h2>
+<ul>
+<li><strong><code>this</code>:</strong> Tham chiếu đến đối tượng hiện tại. Thường dùng để phân biệt biến instance và biến tham số.</li>
+<li><strong><code>super</code>:</strong> Tham chiếu đến đối tượng của lớp cha. Dùng để gọi constructor hoặc phương thức của lớp cha.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    Person(String name) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span> <span style="color:#66d9ef">extends</span> Person {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> salary;
+</span></span><span style="display:flex;"><span>    Employee(String name, <span style="color:#66d9ef">double</span> salary) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(name); <span style="color:#75715e">// Gọi constructor lớp cha</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">salary</span> <span style="color:#f92672">=</span> salary;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="kết-luận">Kết luận</h2>
+<p>OOP giúp code dễ bảo trì, dễ mở rộng và mô phỏng thế giới thực tốt hơn. Hãy luyện tập việc thiết kế class diagram trước khi bắt tay vào code để áp dụng triệt để các nguyên lý này!</p>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

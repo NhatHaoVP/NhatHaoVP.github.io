@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on Võ Phạm Nhật Hào</title>
+    <link>http://example.org/tags/backend/</link>
+    <description>Recent content in Backend on Võ Phạm Nhật Hào</description>
+    <generator>Hugo</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 29 Dec 2025 15:00:00 +0700</lastBuildDate>
+    <atom:link href="http://example.org/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nhập môn Spring Boot: Tại sao nên dùng?</title>
+      <link>http://example.org/posts/spring-boot-intro/</link>
+      <pubDate>Mon, 29 Dec 2025 15:00:00 +0700</pubDate>
+      <guid>http://example.org/posts/spring-boot-intro/</guid>
+      <description>&lt;h2 id=&#34;spring-vs-spring-boot&#34;&gt;Spring vs Spring Boot&lt;/h2&gt;&#xA;&lt;p&gt;Spring Framework là một framework khổng lồ và mạnh mẽ nhất thế giới Java. Tuy nhiên, việc cấu hình Spring (XML hoặc Java Config) rất phức tạp và tốn thời gian (&amp;ldquo;Configuration Hell&amp;rdquo;).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Spring Boot&lt;/strong&gt; ra đời để giải quyết vấn đề đó. Nó được xây dựng &lt;em&gt;trên nền tảng&lt;/em&gt; Spring nhưng đi kèm triết lý &lt;strong&gt;&amp;ldquo;Convention over Configuration&amp;rdquo;&lt;/strong&gt; (Quy ước hơn cấu hình).&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Auto-configuration:&lt;/strong&gt; Tự động cấu hình các thư viện dựa trên file JAR có trong project.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Standalone:&lt;/strong&gt; Tích hợp sẵn server (như Tomcat, Jetty) nên có thể chạy ứng dụng chỉ bằng lệnh &lt;code&gt;java -jar&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Opinionated:&lt;/strong&gt; Đưa ra các cấu hình mặc định hợp lý để bạn bắt đầu code business logic ngay lập tức.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;các-khái-niệm-cốt-lõi&#34;&gt;Các khái niệm cốt lõi&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-inversion-of-control-ioc-và-dependency-injection-di&#34;&gt;1. Inversion of Control (IoC) và Dependency Injection (DI)&lt;/h3&gt;&#xA;&lt;p&gt;Đây là trái tim của Spring. Thay vì bạn tự tạo đối tượng (&lt;code&gt;new Object()&lt;/code&gt;), Spring Container sẽ tạo và quản lý chúng (gọi là &lt;strong&gt;Beans&lt;/strong&gt;). Khi cần dùng, Spring sẽ tự &amp;ldquo;tiêm&amp;rdquo; (inject) vào cho bạn.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

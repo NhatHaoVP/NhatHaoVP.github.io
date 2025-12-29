@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Java Cơ Bản: Biến và Kiểu Dữ Liệu | Võ Phạm Nhật Hào</title>
+  <meta name="description" content="Developer Resume">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+  <div class="site-header-inner">
+    <nav class="site-nav">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about/" class="nav-link">ABOUT</a>
+      <a href="/resume/" class="nav-link">RÉSUMÉ</a>
+      <a href="/posts/" class="nav-link">BLOG</a>
+      <a href="/contact/" class="nav-link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+  <main class="container">
+    
+  <article class="post">
+    <h1>Java Cơ Bản: Biến và Kiểu Dữ Liệu</h1>
+    <p class="post-meta">29/12/2025</p>
+    <div class="post-content">
+      <h2 id="giới-thiệu-về-java">Giới thiệu về Java</h2>
+<p>Java là một ngôn ngữ lập trình hướng đối tượng, đa mục đích và mạnh mẽ, được sử dụng rộng rãi trong phát triển phần mềm doanh nghiệp, ứng dụng di động (Android) và hệ thống lớn. Một trong những khái niệm nền tảng quan trọng nhất khi bắt đầu học Java chính là <strong>biến</strong> và <strong>các kiểu dữ liệu</strong>.</p>
+<p>Việc hiểu rõ cách Java lưu trữ và xử lý dữ liệu sẽ giúp bạn viết code hiệu quả, tối ưu bộ nhớ và tránh các lỗi logic không đáng có.</p>
+<h2 id="biến-variables">Biến (Variables)</h2>
+<p>Biến là tên gọi của một vùng nhớ dùng để lưu trữ dữ liệu. Trong Java, vì là ngôn ngữ định kiểu tĩnh (statically typed), bạn bắt buộc phải khai báo kiểu dữ liệu cho biến trước khi sử dụng.</p>
+<h3 id="cú-pháp-khai-báo">Cú pháp khai báo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// KieuDuLieu tenBien = GiaTri;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age <span style="color:#f92672">=</span> 20;
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hào&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> salary <span style="color:#f92672">=</span> 1000.<span style="color:#a6e22e">50</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> isStudent <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span></code></pre></div><h3 id="quy-tắc-đặt-tên-biến-naming-convention">Quy tắc đặt tên biến (Naming Convention)</h3>
+<p>Trong Java, việc đặt tên biến tuân theo quy tắc <strong>camelCase</strong>:</p>
+<ul>
+<li>Ký tự đầu tiên viết thường.</li>
+<li>Các từ tiếp theo viết hoa chữ cái đầu.</li>
+<li>Tên biến nên có ý nghĩa rõ ràng (ví dụ: <code>customerName</code> thay vì <code>n</code>).</li>
+</ul>
+<h3 id="phạm-vi-của-biến-variable-scope">Phạm vi của biến (Variable Scope)</h3>
+<ol>
+<li><strong>Local Variables (Biến cục bộ):</strong> Khai báo trong phương thức, constructor hoặc block. Chỉ tồn tại trong phạm vi đó.</li>
+<li><strong>Instance Variables (Biến toàn cục):</strong> Khai báo trong class nhưng ngoài phương thức. Thuộc về đối tượng (object).</li>
+<li><strong>Static Variables (Biến tĩnh):</strong> Khai báo với từ khóa <code>static</code>. Thuộc về class, dùng chung cho tất cả đối tượng.</li>
+</ol>
+<h2 id="kiểu-dữ-liệu-data-types">Kiểu dữ liệu (Data Types)</h2>
+<p>Java chia kiểu dữ liệu thành hai nhóm chính: <strong>Primitive</strong> (Nguyên thủy) và <strong>Reference</strong> (Tham chiếu).</p>
+<h3 id="1-primitive-data-types-kiểu-nguyên-thủy">1. Primitive Data Types (Kiểu nguyên thủy)</h3>
+<p>Java có 8 kiểu dữ liệu nguyên thủy, lưu trữ giá trị trực tiếp và tốn ít bộ nhớ.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Kiểu</th>
+          <th style="text-align: left">Kích thước</th>
+          <th style="text-align: left">Mô tả</th>
+          <th style="text-align: left">Ví dụ</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>byte</code></td>
+          <td style="text-align: left">1 byte</td>
+          <td style="text-align: left">Số nguyên rất nhỏ (-128 đến 127)</td>
+          <td style="text-align: left"><code>byte b = 100;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>short</code></td>
+          <td style="text-align: left">2 bytes</td>
+          <td style="text-align: left">Số nguyên nhỏ</td>
+          <td style="text-align: left"><code>short s = 10000;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>int</code></td>
+          <td style="text-align: left">4 bytes</td>
+          <td style="text-align: left">Số nguyên thông dụng nhất</td>
+          <td style="text-align: left"><code>int i = 100000;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>long</code></td>
+          <td style="text-align: left">8 bytes</td>
+          <td style="text-align: left">Số nguyên rất lớn (cần hậu tố L)</td>
+          <td style="text-align: left"><code>long l = 100000L;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>float</code></td>
+          <td style="text-align: left">4 bytes</td>
+          <td style="text-align: left">Số thực (cần hậu tố f)</td>
+          <td style="text-align: left"><code>float f = 5.75f;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>double</code></td>
+          <td style="text-align: left">8 bytes</td>
+          <td style="text-align: left">Số thực độ chính xác cao</td>
+          <td style="text-align: left"><code>double d = 19.99;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>boolean</code></td>
+          <td style="text-align: left">1 bit</td>
+          <td style="text-align: left">Giá trị logic (true/false)</td>
+          <td style="text-align: left"><code>boolean flag = true;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>char</code></td>
+          <td style="text-align: left">2 bytes</td>
+          <td style="text-align: left">Một ký tự Unicode</td>
+          <td style="text-align: left"><code>char Grade = 'A';</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="2-reference-data-types-kiểu-tham-chiếu">2. Reference Data Types (Kiểu tham chiếu)</h3>
+<p>Kiểu tham chiếu được dùng để lưu trữ địa chỉ của đối tượng trong bộ nhớ Heap.</p>
+<ul>
+<li><strong>String:</strong> Chuỗi ký tự (là một object đặc biệt).</li>
+<li><strong>Arrays:</strong> Mảng chứa nhiều phần tử.</li>
+<li><strong>Classes &amp; Interfaces:</strong> Các đối tượng do người dùng định nghĩa.</li>
+</ul>
+<h2 id="ép-kiểu-type-casting">Ép kiểu (Type Casting)</h2>
+<p>Trong Java, việc chuyển đổi từ kiểu dữ liệu này sang kiểu dữ liệu khác gọi là Type Casting.</p>
+<h3 id="implicit-casting-nới-rộng">Implicit Casting (Nới rộng)</h3>
+<p>Chuyển từ kiểu nhỏ sang kiểu lớn hơn, diễn ra tự động.
+<code>byte</code> -&gt; <code>short</code> -&gt; <code>char</code> -&gt; <code>int</code> -&gt; <code>long</code> -&gt; <code>float</code> -&gt; <code>double</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInt <span style="color:#f92672">=</span> 9;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> myDouble <span style="color:#f92672">=</span> myInt; <span style="color:#75715e">// Tự động chuyển thành 9.0</span>
+</span></span></code></pre></div><h3 id="explicit-casting-thu-hẹp">Explicit Casting (Thu hẹp)</h3>
+<p>Chuyển từ kiểu lớn sang kiểu nhỏ hơn, phải làm thủ công và có thể mất dữ liệu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> myDouble <span style="color:#f92672">=</span> 9.<span style="color:#a6e22e">78</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> myInt <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span>) myDouble; <span style="color:#75715e">// Thủ công, kết quả là 9 (mất phần thập phân)</span>
+</span></span></code></pre></div><h2 id="kết-luận">Kết luận</h2>
+<p>Nắm vững các kiểu dữ liệu và biến là bước đệm vững chắc để bạn tiến sâu hơn vào lập trình Java. Hãy chú ý đến việc chọn kiểu dữ liệu phù hợp để tối ưu hóa hiệu năng chương trình của bạn!</p>
+
+    </div>
+  </article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Võ Phạm Nhật Hào - Tạo bằng Hugo.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

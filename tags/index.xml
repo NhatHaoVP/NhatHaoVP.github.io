@@ -6,6 +6,112 @@
     <description>Recent content in Tags on Võ Phạm Nhật Hào</description>
     <generator>Hugo</generator>
     <language>vi-vn</language>
+    <lastBuildDate>Mon, 29 Dec 2025 17:00:00 +0700</lastBuildDate>
     <atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM</title>
+      <link>http://example.org/tags/dom/</link>
+      <pubDate>Mon, 29 Dec 2025 17:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/dom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frontend</title>
+      <link>http://example.org/tags/frontend/</link>
+      <pubDate>Mon, 29 Dec 2025 17:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/frontend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>http://example.org/tags/javascript/</link>
+      <pubDate>Mon, 29 Dec 2025 17:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Async</title>
+      <link>http://example.org/tags/async/</link>
+      <pubDate>Mon, 29 Dec 2025 16:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/async/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Backend</title>
+      <link>http://example.org/tags/backend/</link>
+      <pubDate>Mon, 29 Dec 2025 15:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/backend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://example.org/tags/java/</link>
+      <pubDate>Mon, 29 Dec 2025 15:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring Boot</title>
+      <link>http://example.org/tags/spring-boot/</link>
+      <pubDate>Mon, 29 Dec 2025 15:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comparison</title>
+      <link>http://example.org/tags/comparison/</link>
+      <pubDate>Mon, 29 Dec 2025 14:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/comparison/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ES6</title>
+      <link>http://example.org/tags/es6/</link>
+      <pubDate>Mon, 29 Dec 2025 13:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/es6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Functional Programming</title>
+      <link>http://example.org/tags/functional-programming/</link>
+      <pubDate>Mon, 29 Dec 2025 12:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Streams</title>
+      <link>http://example.org/tags/streams/</link>
+      <pubDate>Mon, 29 Dec 2025 12:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/streams/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OOP</title>
+      <link>http://example.org/tags/oop/</link>
+      <pubDate>Mon, 29 Dec 2025 11:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/oop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collections</title>
+      <link>http://example.org/tags/collections/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/collections/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Structures</title>
+      <link>http://example.org/tags/data-structures/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/data-structures/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://example.org/tags/programming/</link>
+      <pubDate>Mon, 29 Dec 2025 09:00:00 +0700</pubDate>
+      <guid>http://example.org/tags/programming/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
