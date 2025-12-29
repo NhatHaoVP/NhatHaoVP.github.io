@@ -1,0 +1,478 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  background: #ffffff;
+  color: #222;
+}
+
+.site-header {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.site-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /* Centered nav for minimal look */
+  justify-content: center;
+  padding: 1.5rem 1.5rem;
+}
+
+.site-logo {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: #111827;
+}
+
+.nav-link:hover {
+  color: #10b981;
+}
+
+main.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+/* === CV layout === */
+
+.cv-layout {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cv-sidebar {
+  flex: 0 0 30%;
+  background: #0f766e;
+  color: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+.cv-main {
+  flex: 1;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem 2rem;
+}
+
+.cv-avatar {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cv-avatar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e5e7eb;
+}
+
+.cv-name {
+  text-align: center;
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.4rem;
+}
+
+.cv-role {
+  text-align: center;
+  margin: 0;
+  font-size: 0.95rem;
+  color: #d1fae5;
+}
+
+.cv-divider {
+  height: 1px;
+  background: rgba(15, 23, 42, 0.25);
+  margin: 1.25rem 0;
+}
+
+.cv-contact {
+  font-size: 0.9rem;
+}
+
+.cv-contact-item {
+  margin-bottom: 0.5rem;
+}
+
+.cv-contact-label {
+  font-weight: 600;
+  display: block;
+}
+
+.cv-contact-value {
+  opacity: 0.9;
+}
+
+.cv-section {
+  margin-top: 1.5rem;
+}
+
+.cv-section-left {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.cv-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem;
+}
+
+.cv-main .cv-section-title {
+  color: #0f766e;
+}
+
+.cv-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cv-row-main {
+  flex: 1;
+}
+
+.cv-row-heading {
+  margin: 0 0 0.15rem;
+}
+
+.cv-row-sub {
+  margin: 0 0 0.15rem;
+  font-size: 0.95rem;
+}
+
+.cv-row-detail {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.cv-row-meta {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.cv-paragraph {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+.cv-skill {
+  margin-bottom: 0.75rem;
+}
+
+.cv-skill-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.cv-skill-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.cv-skill-bar span {
+  display: block;
+  height: 100%;
+  background: #16a34a;
+}
+
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.cv-list li {
+  margin-bottom: 0.4rem;
+}
+
+.cv-list-date {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .cv-layout {
+    flex-direction: column;
+  }
+
+  .cv-main {
+    padding: 1.25rem 1.25rem 1.75rem;
+  }
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: 0.75rem;
+}
+
+.post-date {
+  margin-left: 0.5rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.post h1 {
+  margin-top: 0;
+}
+
+.post-meta {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.post-content {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.site-footer {
+  padding: 1.5rem 0;
+  background: #111827;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* === Home Hero Section === */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  min-height: 70vh;
+  padding: 2rem 0;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Clean sans-serif */
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 4px;
+  /* Slight radius or none for sharp look */
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow decoration */
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* === Contact Page Styles === */
+.contact-container {
+  padding: 2rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-split {
+  display: flex;
+  gap: 4rem;
+}
+
+.contact-info-side {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.contact-form-side {
+  flex: 1.2;
+}
+
+.contact-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  letter-spacing: 0.1em;
+  color: #222;
+}
+
+.contact-subname {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1abc9c;
+  /* Teal color like in image */
+  text-transform: uppercase;
+  margin: 0 0 2rem;
+  letter-spacing: 0.05em;
+}
+
+.contact-details {
+  margin-bottom: 2rem;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.contact-row i {
+  color: #1abc9c;
+  font-size: 1.2rem;
+}
+
+.contact-social-icons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.social-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.social-circle:hover {
+  opacity: 0.8;
+}
+
+/* Form Styles */
+.clean-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.clean-form input,
+.clean-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  /* Light grey border */
+  border-radius: 0;
+  /* Boxy look like reference */
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.clean-form input:focus,
+.clean-form textarea:focus {
+  border-color: #1abc9c;
+}
+
+.btn-send {
+  background: #111;
+  /* Dark button */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  float: right;
+  /* Align right */
+  transition: background 0.2s;
+}
+
+.btn-send:hover {
+  background: #333;
+}
+
+@media (max-width: 800px) {
+  .contact-split {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-info-side {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .contact-details {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .contact-social-icons {
+    justify-content: center;
+  }
+}
